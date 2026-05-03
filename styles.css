@@ -263,3 +263,10 @@ HIGHLIGHT
     padding-right: 6px;
    
 }
+/* Latest */
+#latest {
+    display: flex;
+}
+.books {
+    display: flex;
+}
