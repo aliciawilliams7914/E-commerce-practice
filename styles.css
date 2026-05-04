@@ -27,7 +27,7 @@ p {
 
 }
 .purple {
-    color: rgb(130, 9, 124);
+    color: rgb(127, 16, 121);
 }
 
 .logo {
@@ -44,7 +44,7 @@ li {
 }
 .nav__link {
     text-decoration: none;
-    color: rgb(130, 9, 124);
+    color: rgb(131, 23, 125);
     font-size: 20px;
     font-weight: bold;
     margin-left: 16px;
@@ -127,7 +127,8 @@ button:active {
 }
 
 .btn {
-    background-color: violet;
+    background-color: rgb(132, 17, 132);
+    text-decoration: underline;
     color: white;
     padding: 12px 24px;
     font-size: 20px;
@@ -166,6 +167,15 @@ img {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
+}
+.row__column {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(226, 191, 226);
+    font: white;
+    padding-bottom: 8px;
+
 }
 /*
 HIGHLIGHT 
@@ -267,11 +277,4 @@ HIGHLIGHT
     text-decoration: line-through;
     padding-right: 6px;
    
-}
-/* Latest */
-#latest {
-    display: flex;
-}
-.books {
-    display: flex;
 }
