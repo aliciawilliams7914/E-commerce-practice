@@ -15,6 +15,12 @@ nav {
 p {
     line-height: 1.5;
 }
+a {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
 
 .nav__container {
     width: 100%;
@@ -109,6 +115,10 @@ p {
     color: rgb(14, 1, 13);
     margin-bottom: 32px;
     text-align: center;
+}
+
+.section__title {
+    
 }
 
 button:active {
@@ -280,6 +290,32 @@ HIGHLIGHT
    
 }
 
+/*
+EXPLORE
+*/
+
 #explore {
     background-color: rgba(115, 66, 214, 0.1);
+}
+/*FOOTER
+*/
+footer {
+    background-color: #242424;
+}
+.footer__logo--img {
+    width: 75px;
+    filter: grayscale(1) invert(1);
+}
+
+.footer__link,
+.footer__copyright {
+color: #fff;
+}
+.footer__list { 
+    margin: 20px 0 24px 0;
+
+}
+
+.footer__link {
+    padding:
 }
