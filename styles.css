@@ -91,6 +91,10 @@ li {
     visibility: visible;
     opacity: 1;
 }
+.menu--open {
+    max-height: 100vh;
+    overflow-y: hidden;
+}
 .menu__link {
     max-height: 100vh;
     overflow-y: hidden;
@@ -286,6 +290,7 @@ HIGHLIGHT
 .highlight__subtitle {
     font-size: 20px;
     margin-bottom: 16px;
+    text-align: center;
 }
 
 /* FEATURED
@@ -391,6 +396,18 @@ color: #fff;
     .header__description {
         padding: 0 24px;
     }
+    h1 {
+        font-size: 40px;
+    }
+    h2 {
+        font-size: 18px;
+    }
+    button {
+        font-size: 18px;
+    }
+    .book {
+        width: 50%;
+    }
 }
 
 /* SMALL PHONES, TABLETS, LARGE SMARTPHONES */
@@ -402,3 +419,11 @@ color: #fff;
         .nav__links {
             display: none;
         }
+        .highlight {
+            width: 100%;
+            
+        }
+        .highlight:not(:last-child) {
+            margin-bottom: 24px;
+        }
+    }
