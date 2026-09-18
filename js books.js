@@ -92,4 +92,5 @@ function getBooks() {
             discountedPrice: 14.95,
             rating: 4.5
         }
-    };
+    ];
+}
