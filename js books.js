@@ -1,11 +1,26 @@
-function renderBooks() {
+function renderBooks(filter) {
     const booksWrapper = document.querySelector(".books");
 
    
 
-   const books = getBooks();
+const books = getBooks();
 
-   const booksHtml = books.map((book) => {
+console.log(filter)
+if (filter === "LOW_TO_HIGH") {
+    console.log("low to high");
+    books.sort((a, b) => a.originalPrice - b.originalPrice);
+}
+if (filter === "HIGH_TO_LOW") {
+    console.log("high to low");
+    books.sort((a, b) => b.originalPrice - a.originalPrice);
+}
+if (filter === "RATING") {
+    console.log("rating");
+    books.sort((a, b) => b.rating - a.rating);
+}
+
+   const booksHtml = books
+   .map((book) => {
 
    return `<div class="book">
 <figure class="book__img--wrapper">
@@ -22,22 +37,26 @@ ${book.title}
 <i class="fas fa-star-half-alt"></i>
 </div>
 <div class="book__price">
-<span class="book__price--normal">$${book.originalPrice}</span> $${book.discountedPrice}
+<span>$${book.originalPrice.toFixed(2)}</span>
 </div>
 </div>`;
-});
+})
+   .join("");
 
-   
+   console.log(booksHtml);
     
  booksWrapper.innerHTML = booksHtml;
-console.log(booksHtml)
+
  
 }
  
-
+function filterBooks(event) {
+    renderBooks(event.target.value);
+    
+}
 
 setTimeout(() => {
-renderBooks();
+renderBooks(filter);
 });
 
 
@@ -64,7 +83,7 @@ function getBooks() {
             id: 3,
             url: "Atomic Habits.jpg",
             title: "Atomic Habits.jpg",
-            originalPrice: 59.95,
+            originalPrice: 29.95,
             discountedPrice: 14.95,
             rating: 4.5
         },
@@ -72,7 +91,7 @@ function getBooks() {
             id: 4,
             url: "deep-work-2.jpg",
             title: "Deep Work.jpg",
-            originalPrice: 59.95,
+            originalPrice: 22.95,
             discountedPrice: 14.95,
             rating: 4.5
         },
@@ -129,8 +148,8 @@ function getBooks() {
              {
             id: 6,
             url: "be-obsessed-or-be-average-main.jpg",
-            title: "CashFlow Quadrant.jpg",
-            originalPrice: 59.95,
+            title: "be-obsessed-or-be-average-main.jpg",
+            originalPrice: 29.95,
             discountedPrice: 14.95,
             rating: 4.5
         },
