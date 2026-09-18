@@ -47,7 +47,7 @@ function getBooks() {
         {
             id: 1,
             url: "cracking-the-coding-interview.png",
-            title: "cracking-the-coding-interview.png",
+            title: "Cracking the Coding Interview",
             originalPrice: 59.95,
             discountedPrice: 14.95,
             rating: 4.5
@@ -55,7 +55,7 @@ function getBooks() {
         {
             id: 2,
             url: "The-10X-Rule-scaled.jpg",
-            title: "The-10X-Rule-scaled.png",
+            title: "The-10X-Rule-scaled.jpg",
             originalPrice: 59.95,
             discountedPrice: 14.95,
             rating: 4.5
@@ -91,6 +91,60 @@ function getBooks() {
             originalPrice: 59.95,
             discountedPrice: 14.95,
             rating: 4.5
+        },
+          {
+            id: 6,
+            url: "Your-Next-Five-Moves.jpg",
+            title: "Your Next Five Moves.jpg",
+            originalPrice: 59.95,
+            discountedPrice: 14.95,
+            rating: 4.5
+        },
+          {
+            id: 6,
+            url: "Mastery.jpg",
+            title: "Mastery.jpg",
+            originalPrice: 59.95,
+            discountedPrice: 14.95,
+            rating: 4.5
+        },
+          {
+            id: 6,
+            url: "the-48-laws-of-power-review-732x1024.jpg",
+            title: "48 Laws of Power.jpg",
+            originalPrice: 59.95,
+            discountedPrice: 14.95,
+            rating: 4.5
+        },
+          {
+            id: 6,
+            url: "rich dad's cashflow.jpg",
+            title: "CashFlow Quadrant.jpg",
+            originalPrice: 59.95,
+            discountedPrice: 14.95,
+            rating: 4.5
+        },
+
+        
+             {
+            id: 6,
+            url: "be-obsessed-or-be-average-main.jpg",
+            title: "CashFlow Quadrant.jpg",
+            originalPrice: 59.95,
+            discountedPrice: 14.95,
+            rating: 4.5
+        },
+
+        
+             {
+            id: 6,
+            url: "can-t-hurt-me-2.jpg",
+            title: "Can't Hurt Me.jpg",
+            originalPrice: 59.95,
+            discountedPrice: 14.95,
+            rating: 4.5
         }
+        
+        
     ];
 }
