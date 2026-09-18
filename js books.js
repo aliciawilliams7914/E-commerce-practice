@@ -46,15 +46,15 @@ function getBooks() {
     return [
         {
             id: 1,
-            url: "cracking-the-coding-interview",
-            title: "assets/Cracking the Coding Interview",
+            url: "cracking-the-coding-interview.jpg",
+            title: "assets/Cracking the Coding Interview.jpg",
             originalPrice: 59.95,
             discountedPrice: 14.95,
             rating: 4.5
         },
         {
             id: 2,
-            url: "The-10X-Rule-scaled",
+            url: "The-10X-Rule-scaled.jpg",
             title: "assets/The-10X-Rule-scaled.png",
             originalPrice: 59.95,
             discountedPrice: 14.95,
@@ -62,23 +62,23 @@ function getBooks() {
         },
         {
             id: 3,
-            url: "Atomic Habits",
-            title: "assets/Atomic Habits.jpeg",
+            url: "Atomic Habits.jpg",
+            title: "assets/Atomic Habits.jpg",
             originalPrice: 59.95,
             discountedPrice: 14.95,
             rating: 4.5
         },
         {
             id: 4,
-            url: "deep-work",
-            title: "assets/Deep Work (1).jpeg",
+            url: "deep-work.jpg",
+            title: "assets/Deep Work.jpg",
             originalPrice: 59.95,
             discountedPrice: 14.95,
             rating: 4.5
         },
         {
             id: 5,
-            url: "5 second rule",
+            url: "5 second rule.jpg",
             title: "assets/5 Second Rule.jpg",
             originalPrice: 59.95,
             discountedPrice: 14.95,
@@ -86,7 +86,7 @@ function getBooks() {
         },
         {
             id: 6,
-            url: "rich and poor dad",
+            url: "rich and poor dad.jpg",
             title: "assets/Rich and Poor Dad.jpg",
             originalPrice: 59.95,
             discountedPrice: 14.95,
