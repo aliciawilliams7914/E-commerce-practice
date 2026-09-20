@@ -5,19 +5,15 @@ function renderBooks(filter) {
 
 const books = getBooks();
 
-console.log(filter)
+
 if (filter === "LOW_TO_HIGH") {
-    console.log("low to high");
     books.sort((a, b) => a.originalPrice - b.originalPrice);
-}
-if (filter === "HIGH_TO_LOW") {
-    console.log("high to low");
-    books.sort((a, b) => b.originalPrice - a.originalPrice);
-}
-if (filter === "RATING") {
-    console.log("rating");
+    } else if (filter === "HIGH_TO_LOW") {
+   books.sort((a, b) => b.originalPrice - a.originalPrice);
+    } else if (filter === "RATING") {
     books.sort((a, b) => b.rating - a.rating);
-}
+    }
+
 
    const booksHtml = books
    .map((book) => {
@@ -30,11 +26,7 @@ if (filter === "RATING") {
 ${book.title}
 </div>
 <div class="book__ratings">
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star-half-alt"></i>
+${ratingsHtml(book.rating)}
 </div>
 <div class="book__price">
 <span>$${book.originalPrice.toFixed(2)}</span>
@@ -43,11 +35,21 @@ ${book.title}
 })
    .join("");
 
-   console.log(booksHtml);
+   
     
  booksWrapper.innerHTML = booksHtml;
 
  
+}
+function ratingsHtml(rating) {
+    let ratingsHtml = "";
+    for (let i = 0; i < Math.floor(rating); i++) {
+        ratingsHtml += `<i class="fas fa-star"></i>`;
+    }
+    if (!Number.isInteger(rating)) {
+        ratingsHtml += `<i class="fas fa-star-half-alt"></i>`;
+    }
+    return ratingsHtml;
 }
  
 function filterBooks(event) {
@@ -74,7 +76,7 @@ function getBooks() {
         {
             id: 2,
             url: "The-10X-Rule-scaled.jpg",
-            title: "The-10X-Rule-scaled.jpg",
+            title: "The-10X-Rule-scaled.",
             originalPrice: 59.95,
             discountedPrice: 14.95,
             rating: 4.5
@@ -82,7 +84,7 @@ function getBooks() {
         {
             id: 3,
             url: "Atomic Habits.jpg",
-            title: "Atomic Habits.jpg",
+            title: "Atomic Habits.",
             originalPrice: 29.95,
             discountedPrice: 14.95,
             rating: 4.5
@@ -90,7 +92,7 @@ function getBooks() {
         {
             id: 4,
             url: "deep-work-2.jpg",
-            title: "Deep Work.jpg",
+            title: "Deep Work.",
             originalPrice: 22.95,
             discountedPrice: 14.95,
             rating: 4.5
@@ -98,7 +100,7 @@ function getBooks() {
         {
             id: 5,
             url: "5 second rule.jpg",
-            title: "5 Second Rule.jpg",
+            title: "5 Second Rule.",
             originalPrice: 59.95,
             discountedPrice: 14.95,
             rating: 4.5
@@ -106,7 +108,7 @@ function getBooks() {
         {
             id: 6,
             url: "rich and poor dad.jpg",
-            title: "Rich and Poor Dad.jpg",
+            title: "Rich and Poor Dad.",
             originalPrice: 59.95,
             discountedPrice: 14.95,
             rating: 4.5
@@ -114,7 +116,7 @@ function getBooks() {
           {
             id: 6,
             url: "Your-Next-Five-Moves.jpg",
-            title: "Your Next Five Moves.jpg",
+            title: "Your Next Five Moves.",
             originalPrice: 59.95,
             discountedPrice: 14.95,
             rating: 4.5
@@ -122,7 +124,7 @@ function getBooks() {
           {
             id: 6,
             url: "Mastery.jpg",
-            title: "Mastery.jpg",
+            title: "Mastery.",
             originalPrice: 59.95,
             discountedPrice: 14.95,
             rating: 4.5
@@ -130,7 +132,7 @@ function getBooks() {
           {
             id: 6,
             url: "the-48-laws-of-power-review-732x1024.jpg",
-            title: "48 Laws of Power.jpg",
+            title: "48 Laws of Power.",
             originalPrice: 59.95,
             discountedPrice: 14.95,
             rating: 4.5
@@ -138,7 +140,7 @@ function getBooks() {
           {
             id: 6,
             url: "rich dad's cashflow.jpg",
-            title: "CashFlow Quadrant.jpg",
+            title: "CashFlow Quadrant.",
             originalPrice: 59.95,
             discountedPrice: 14.95,
             rating: 4.5
@@ -148,7 +150,7 @@ function getBooks() {
              {
             id: 6,
             url: "be-obsessed-or-be-average-main.jpg",
-            title: "be-obsessed-or-be-average-main.jpg",
+            title: "be-obsessed-or-be-average-main.",
             originalPrice: 29.95,
             discountedPrice: 14.95,
             rating: 4.5
@@ -158,7 +160,7 @@ function getBooks() {
              {
             id: 6,
             url: "can-t-hurt-me-2.jpg",
-            title: "Can't Hurt Me.jpg",
+            title: "Can't Hurt Me.",
             originalPrice: 59.95,
             discountedPrice: 14.95,
             rating: 4.5
