@@ -14,6 +14,8 @@ if (filter === "LOW_TO_HIGH") {
     books.sort((a, b) => b.rating - a.rating);
     }
 
+  
+
 
    const booksHtml = books
    .map((book) => {
@@ -87,7 +89,7 @@ function getBooks() {
             title: "Atomic Habits.",
             originalPrice: 29.95,
             discountedPrice: 14.95,
-            rating: 4.5
+            rating: 5
         },
         {
             id: 4,
@@ -111,7 +113,7 @@ function getBooks() {
             title: "Rich and Poor Dad.",
             originalPrice: 59.95,
             discountedPrice: 14.95,
-            rating: 4.5
+            rating: 5
         },
           {
             id: 6,
@@ -119,7 +121,7 @@ function getBooks() {
             title: "Your Next Five Moves.",
             originalPrice: 59.95,
             discountedPrice: 14.95,
-            rating: 4.5
+            rating: 4
         },
           {
             id: 6,
@@ -143,7 +145,7 @@ function getBooks() {
             title: "CashFlow Quadrant.",
             originalPrice: 59.95,
             discountedPrice: 14.95,
-            rating: 4.5
+            rating: 4
         },
 
         
@@ -153,7 +155,7 @@ function getBooks() {
             title: "be-obsessed-or-be-average-main.",
             originalPrice: 29.95,
             discountedPrice: 14.95,
-            rating: 4.5
+            rating: 4
         },
 
         
