@@ -7,9 +7,9 @@ const books = getBooks();
 
 
 if (filter === "LOW_TO_HIGH") {
-    books.sort((a, b) => a.originalPrice - b.originalPrice);
+    books.sort((a, b) => (a.discountedPrice || a.originalPrice) - (b.discountedPrice || b.originalPrice));
     } else if (filter === "HIGH_TO_LOW") {
-   books.sort((a, b) => b.originalPrice - a.originalPrice);
+   books.sort((a, b) => (b.discountedPrice || b.originalPrice) - (a.discountedPrice || a.originalPrice));
     } else if (filter === "RATING") {
     books.sort((a, b) => b.rating - a.rating);
     }
@@ -31,7 +31,7 @@ ${book.title}
 ${ratingsHtml(book.rating)}
 </div>
 <div class="book__price">
-<span>$${book.originalPrice.toFixed(2)}</span>
+${priceHtml(book.originalPrice, book.discountedPrice)}
 </div>
 </div>`;
 })
@@ -40,8 +40,16 @@ ${ratingsHtml(book.rating)}
    
     
  booksWrapper.innerHTML = booksHtml;
+}
 
- 
+
+function priceHtml(originalPrice, discountedPrice) {
+    if (!discountedPrice){
+        return `$${originalPrice.toFixed(2)}`;
+    }
+    else {
+        return `<span class="book__price--normal">$${originalPrice.toFixed(2)}</span> $${discountedPrice.toFixed(2)}`;
+    }
 }
 function ratingsHtml(rating) {
     let ratingsHtml = "";
@@ -71,7 +79,7 @@ function getBooks() {
             id: 1,
             url: "cracking-the-coding-interview.png",
             title: "Cracking the Coding Interview",
-            originalPrice: 59.95,
+            originalPrice: 49.95,
             discountedPrice: 14.95,
             rating: 4.5
         },
@@ -79,33 +87,33 @@ function getBooks() {
             id: 2,
             url: "The-10X-Rule-scaled.jpg",
             title: "The-10X-Rule-scaled.",
-            originalPrice: 59.95,
-            discountedPrice: 14.95,
+            originalPrice: 44.95,
+            discountedPrice: 19.95,
             rating: 4.5
         },
         {
             id: 3,
             url: "Atomic Habits.jpg",
             title: "Atomic Habits.",
-            originalPrice: 29.95,
-            discountedPrice: 14.95,
+            originalPrice: 39.95,
+            discountedPrice: null,
             rating: 5
         },
         {
             id: 4,
             url: "deep-work-2.jpg",
             title: "Deep Work.",
-            originalPrice: 22.95,
-            discountedPrice: 14.95,
+            originalPrice: 29.95,
+            discountedPrice: 12.95,
             rating: 4.5
         },
         {
             id: 5,
             url: "5 second rule.jpg",
             title: "5 Second Rule.",
-            originalPrice: 59.95,
-            discountedPrice: 14.95,
-            rating: 4.5
+            originalPrice: 35.00,
+            discountedPrice: null,
+            rating: 3
         },
         {
             id: 6,
@@ -119,16 +127,16 @@ function getBooks() {
             id: 6,
             url: "Your-Next-Five-Moves.jpg",
             title: "Your Next Five Moves.",
-            originalPrice: 59.95,
-            discountedPrice: 14.95,
+            originalPrice: 40.00,
+            discountedPrice: null,
             rating: 4
         },
           {
             id: 6,
             url: "Mastery.jpg",
             title: "Mastery.",
-            originalPrice: 59.95,
-            discountedPrice: 14.95,
+            originalPrice: 30.00,
+            discountedPrice: null,
             rating: 4.5
         },
           {
@@ -153,8 +161,8 @@ function getBooks() {
             id: 6,
             url: "be-obsessed-or-be-average-main.jpg",
             title: "be-obsessed-or-be-average-main.",
-            originalPrice: 29.95,
-            discountedPrice: 14.95,
+            originalPrice: 32.00,
+            discountedPrice: 17.95,
             rating: 4
         },
 
